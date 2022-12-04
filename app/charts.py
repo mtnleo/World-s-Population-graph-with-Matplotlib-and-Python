@@ -21,7 +21,7 @@ def show_population_countries_bars(countries_list):
 
   labels, values = get_values_labels(countries_list)
 
-  ax.bar(labels, values)
+  ax.bar(labels, values, color = "#027a6a", width = 0.8)
   plt.show()
 
 
@@ -30,11 +30,13 @@ def show_population_countries_pie(countries_list):
 
   values = []
   labels = []
+  explode = [0, 0, 0.2, 0, 0, 0, 0, 0, 0]
   
   labels, values = get_values_labels(countries_list)
 
-  ax.pie(values, labels=labels)
+  ax.pie(values, labels=labels, explode = explode)
   ax.axis("equal")
+  plt.legend(title = "Most Population by 2022:")
   plt.show()
 
 
